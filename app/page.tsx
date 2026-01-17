@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { componentMap } from '@/components/componentMap';
 import SmartInput from '@/components/SmartInput';
 import ChatClient from '@/components/ChatClient';
@@ -15,6 +15,20 @@ export default function Page() {
   const [activeComponent, setActiveComponent] = useState<string>('Home');
   const [aiMessage, setAiMessage] = useState<string | null>(null);
   const [summary, setSummary] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleNavigation = (event: CustomEvent) => {
+      setActiveComponent(event.detail);
+    };
+
+    // @ts-ignore - CustomEvent type definition issue
+    window.addEventListener('navigate', handleNavigation);
+    
+    return () => {
+      // @ts-ignore
+      window.removeEventListener('navigate', handleNavigation);
+    };
+  }, []);
 
   const ActiveComponent = componentMap[activeComponent] || (() => <p>Component not found</p>);
 

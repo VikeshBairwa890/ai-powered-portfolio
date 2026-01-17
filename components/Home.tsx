@@ -39,27 +39,37 @@ export default function Home() {
 
 
           <div className="flex justify-center gap-4">
-            <a
-              href="#"
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                const event = new CustomEvent('navigate', { detail: 'Projects' });
+                window.dispatchEvent(event);
+              }}
               className="
                 px-6 py-2 rounded-md font-medium transition
                 bg-teal-700 text-white hover:bg-teal-800
                 dark:bg-amber-500 dark:text-slate-900 dark:hover:bg-amber-400
+                cursor-pointer
               "
             >
               View Projects
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                const event = new CustomEvent('navigate', { detail: 'Contact' });
+                window.dispatchEvent(event);
+              }}
               className="
                 px-6 py-2 rounded-md font-medium transition
                 border border-teal-700 text-teal-800 hover:bg-teal-50
                 dark:border-amber-500 dark:text-amber-400 dark:hover:bg-amber-500/10
+                cursor-pointer
               "
             >
               Contact
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>
