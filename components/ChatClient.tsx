@@ -30,7 +30,7 @@ export default function ChatClient({
     });
 
     const { content } = await res.json();
-
+    console.log("AI Response:", content);
     try {
       const parsed = JSON.parse(content);
       if (parsed?.action === 'render_component') {

@@ -40,7 +40,7 @@ export default function Home() {
 
           <div className="flex justify-center gap-4">
             <a
-              href="#projects"
+              href="projects"
               className="
                 px-6 py-2 rounded-md font-medium transition
                 bg-teal-700 text-white hover:bg-teal-800
@@ -51,7 +51,7 @@ export default function Home() {
             </a>
 
             <a
-              href="#contact"
+              href="contact"
               className="
                 px-6 py-2 rounded-md font-medium transition
                 border border-teal-700 text-teal-800 hover:bg-teal-50
