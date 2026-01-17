@@ -25,7 +25,7 @@ export default function Home() {
         transition={{ duration: 0.7 }}
         className="text-4xl md:text-5xl font-bold mb-4 text-indigo-600 dark:text-indigo-400"
       >
-        👋 Hi, I'm Sanket
+        👋 Hi, I'm Vikesh
       </motion.h1>
 
       {/* Subheadline */}
